@@ -1,0 +1,9 @@
+th {
+  background-color: rgba(15,15,235, 0.2);
+  border: 1px solid rgba(190,190,190);
+  padding: 10px 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

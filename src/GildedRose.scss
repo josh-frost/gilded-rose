@@ -1,0 +1,24 @@
+.gilded-rose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title-container {
+    font-family: 'Cinzel Decorative', cursive;
+  }
+
+  .button-container {
+    width: 384px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    padding: .5em 1.5em;
+    margin: 10px 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
