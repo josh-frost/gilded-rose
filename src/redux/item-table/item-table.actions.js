@@ -5,7 +5,7 @@ export const changeTableSortBy = (sortBy) => ({
   payload: sortBy,
 });
 
-export const addItem = (item) => ({
+export const addItemToTable = (item) => ({
   type: ItemTableActionTypes.ITEM_ADDED_TO_TABLE,
   payload: item,
 });

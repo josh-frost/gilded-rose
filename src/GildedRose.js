@@ -1,8 +1,12 @@
+import { useDispatch } from 'react-redux';
+
 import Table from './components/Table/Table';
+import { addItemToTable } from './redux/item-table/item-table.actions';
 
 import './GildedRose.scss';
 
 function GildedRose() {
+  const dispatch = useDispatch();
   return (
     <div className="gilded-rose">
       <h1 className="title-container">GILDED ROSE</h1>
