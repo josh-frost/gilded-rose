@@ -6,7 +6,7 @@ import './TableHeader.scss';
 
 const TABLE_COLUMNS = [
   { displayName: 'Name', value: 'name' },
-  { displayName: 'Days to Sell', value: 'sell_in' },
+  { displayName: 'Days to Sell', value: 'sellIn' },
   { displayName: 'Value', value: 'value' },
 ];
 

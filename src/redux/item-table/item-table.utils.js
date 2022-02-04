@@ -6,26 +6,24 @@ const SpecialItems = {
 
 export const progressItems = (items) => {
   for (let item of items) {
-    if (item.sell_in < 0) {
-      item.sell_in = 0;
+    if (item.sellIn < 0) {
+      item.sellIn = 0;
     }
 
     if (item.name.toLowerCase().includes(SpecialItems.SULFURAS)) {
+      continue;
     } else if (item.name.toLowerCase().includes(SpecialItems.BRIE)) {
-      handleBrie(item);
+      updateBrie(item);
     } else if (item.name.toLowerCase().includes(SpecialItems.BACKSTAGE)) {
-      handleBackstagePasses(item);
+      updateBackstagePasses(item);
     } else {
-      if (item.sell_in > 0) {
-        item.sell_in--;
-        item.value--;
-      }
+      updateRegularItem(item);
     }
   }
 };
 
-const handleBrie = (item) => {};
+const updateBrie = (item) => {};
 
-const handleBackstagePasses = (item) => {};
+const updateBackstagePasses = (item) => {};
 
 const updateRegularItem = (item) => {};

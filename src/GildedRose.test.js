@@ -3,6 +3,6 @@ import GildedRose from './GildedRose';
 
 test('renders learn react link', () => {
   render(<GildedRose />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/gilded rose/i);
   expect(linkElement).toBeInTheDocument();
 });

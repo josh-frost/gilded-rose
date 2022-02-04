@@ -3,6 +3,7 @@ import ItemTableActionTypes from './item-table.types';
 
 const INITIAL_STATE = {
   items: ITEM_TABLE_DATA,
+  displayAddItemModal: false,
   sortBy: 'name',
 };
 
@@ -18,6 +19,12 @@ export const itemTableReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         items: [...state.items, action.payload],
+      };
+
+    case ItemTableActionTypes.TOGGLE_ADD_ITEM_MODAL:
+      return {
+        ...state,
+        displayAddItemModal: !state.displayAddItemModal,
       };
 
     default:

@@ -15,8 +15,5 @@ export const selectTableSortedBy = createSelector(
 
 export const selectSortedTableItems = createSelector(
   [selectTableItems, selectTableSortedBy],
-  (tableItems, sortBy) => {
-    console.log(sortBy);
-    return sort(tableItems, [sortBy]);
-  }
+  (tableItems, sortBy) => sort(tableItems, [sortBy, 'name'])
 );

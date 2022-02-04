@@ -1,6 +1,7 @@
 const ItemTableActionTypes = {
   CHANGE_TABLE_SORT: 'CHANGE_TABLE_SORT',
   ITEM_ADDED_TO_TABLE: 'ITEM_ADDED_TO_TABLE',
+  TOGGLE_ADD_ITEM_MODAL: 'TOGGLE_ADD_ITEM_MODAL',
 };
 
 export default ItemTableActionTypes;
