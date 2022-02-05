@@ -1,5 +1,6 @@
 import { ITEM_TABLE_DATA } from './item-table.data';
 import ItemTableActionTypes from './item-table.types';
+import { progressItems } from './item-table.utils';
 
 const INITIAL_STATE = {
   items: ITEM_TABLE_DATA,
@@ -27,6 +28,11 @@ export const itemTableReducer = (state = INITIAL_STATE, action) => {
         displayAddItemModal: !state.displayAddItemModal,
       };
 
+    case ItemTableActionTypes.PROGRESS_ITEMS:
+      return {
+        ...state,
+        items: [...progressItems(state.items)],
+      };
     default:
       return state;
   }

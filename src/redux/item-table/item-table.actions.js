@@ -13,3 +13,7 @@ export const addItemToTable = (item) => ({
 export const toggleAddItemModal = () => ({
   type: ItemTableActionTypes.TOGGLE_ADD_ITEM_MODAL,
 });
+
+export const progressItems = () => ({
+  type: ItemTableActionTypes.PROGRESS_ITEMS,
+});

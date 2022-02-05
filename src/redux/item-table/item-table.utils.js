@@ -20,20 +20,32 @@ export const progressItems = (items) => {
     if (item.value < 0) {
       item.value = 0;
     }
+
+    // Value can never exceed 50
+    if (item.value > 50) {
+      item.value = 50;
+    }
+
+    item.sellIn--;
   }
 
   return items;
 };
 
-const updateBrie = (item) => {};
+const updateBrie = (item) => {
+  item.value++;
+};
 
-const updateBackstagePasses = (item) => {};
+const updateBackstagePasses = (item) => {
+  if (item.sellIn <= 0) {
+    item.value = 0;
+  } else {
+    item.value++;
+    if (item.sellIn <= 10) item.value++;
+    if (item.sellIn <= 5) item.value++;
+  }
+};
 
 const updateRegularItem = (item) => {
-  if (item.sellIn > 0) {
-    item.sellIn--;
-    item.value--;
-  } else {
-    item.value = item.value - 2;
-  }
+  item.value = item.sellIn > 0 ? item.value - 1 : (item.value = item.value - 2);
 };

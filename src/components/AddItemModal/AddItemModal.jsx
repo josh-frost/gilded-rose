@@ -30,8 +30,8 @@ const AddItemModal = () => {
 
     const item = {
       name,
-      sellIn,
-      value,
+      sellIn: parseInt(sellIn),
+      value: parseInt(value) > 50 ? 50 : parseInt(value), // value cannot exceed 50
     };
 
     dispatch(addItemToTable(item));

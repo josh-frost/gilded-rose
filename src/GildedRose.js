@@ -2,7 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import AddItemModal from './components/AddItemModal/AddItemModal';
 import Table from './components/Table/Table';
-import { toggleAddItemModal } from './redux/item-table/item-table.actions';
+import {
+  progressItems,
+  toggleAddItemModal,
+} from './redux/item-table/item-table.actions';
 
 import './GildedRose.scss';
 
@@ -17,6 +20,10 @@ function GildedRose() {
     dispatch(toggleAddItemModal());
   };
 
+  const handleProgressClick = () => {
+    dispatch(progressItems());
+  };
+
   return (
     <div className="gilded-rose">
       <h1 className="title-container">GILDED ROSE</h1>
@@ -25,7 +32,9 @@ function GildedRose() {
         <button className="add-item" onClick={handleAddItemClick}>
           + Add Item
         </button>
-        <button className="progress-day">Progress a Day</button>
+        <button className="progress-day" onClick={handleProgressClick}>
+          Progress a Day
+        </button>
       </div>
       {displayAddItemModal && <AddItemModal />}
     </div>
