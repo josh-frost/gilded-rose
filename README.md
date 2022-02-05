@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and is based on the guidelines provided [here](https://github.com/CircleCI-Archived/gilded-rose-kata).
 
+A demo has been deployed to Heroku at [https://jf-gilded-rose.herokuapp.com/](https://jf-gilded-rose.herokuapp.com)
+
 ## Developer Setup
 
 - Install Node.js version 14 or greater (prefer use of nvm to manage Node.js installations)
