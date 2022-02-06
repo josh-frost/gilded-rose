@@ -1,5 +1,6 @@
 const SpecialItems = {
   BRIE: 'aged brie',
+  CONJURED: 'conjured',
   SULFURAS: 'sulfuras',
   BACKSTAGE: 'backstage passes',
 };
@@ -7,6 +8,7 @@ const SpecialItems = {
 export const progressItems = (items) => {
   for (let item of items) {
     if (item.name.toLowerCase().includes(SpecialItems.SULFURAS)) {
+      item.value = 80;
       continue;
     } else if (item.name.toLowerCase().includes(SpecialItems.BRIE)) {
       updateBrie(item);
@@ -47,5 +49,14 @@ const updateBackstagePasses = (item) => {
 };
 
 const updateRegularItem = (item) => {
-  item.value = item.sellIn > 0 ? item.value - 1 : (item.value = item.value - 2);
+  const degradationValue = item.name
+    .toLowerCase()
+    .includes(SpecialItems.CONJURED)
+    ? 2
+    : 1;
+
+  item.value =
+    item.sellIn > 0
+      ? item.value - 1 * degradationValue
+      : (item.value = item.value - 2 * degradationValue);
 };
